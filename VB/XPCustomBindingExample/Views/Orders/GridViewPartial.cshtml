@@ -1,0 +1,28 @@
+﻿@Html.DevExpress().GridView(settings =>
+{
+    settings.Name = "OrdersGridView";
+    settings.CallbackRouteValues = new { Controller = "Orders", Action = "GridViewPart" };
+    settings.CustomBindingRouteValuesCollection.Add(GridViewOperationType.Paging, new { Controller = "Orders", Action = "OrdersPagingAction" });
+    settings.CustomBindingRouteValuesCollection.Add(GridViewOperationType.Sorting, new { Controller = "Orders", Action = "OrdersSortingAction" });
+    settings.CustomBindingRouteValuesCollection.Add(GridViewOperationType.Filtering, new { Controller = "Orders", Action = "OrdersFilteringAction" });
+    settings.CustomBindingRouteValuesCollection.Add(GridViewOperationType.Grouping, new { Controller = "Orders", Action = "OrdersGroupingAction" });
+    settings.Width = 450;
+    settings.Settings.ShowHeaderFilterButton = true;
+    settings.Columns.Add("ProductName");
+    settings.Columns.Add("CustomerName");
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "OrderDate";
+        c.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+        c.SortIndex = 0;
+        c.PropertiesEdit.DisplayFormatString = "d";
+    });
+    settings.Columns.Add("Freight");
+    settings.Settings.ShowFooter = true;
+    settings.TotalSummary.Add(new ASPxSummaryItem("Freight", DevExpress.Data.SummaryItemType.Average));
+    settings.TotalSummary.Add(new ASPxSummaryItem("OrderDate", DevExpress.Data.SummaryItemType.Max));
+    settings.TotalSummary.Add(new ASPxSummaryItem("OrderDate", DevExpress.Data.SummaryItemType.Min));
+    settings.TotalSummary.Add(new ASPxSummaryItem("ProductName", DevExpress.Data.SummaryItemType.Count));
+    settings.Settings.ShowGroupPanel = true;
+    settings.GroupSummary.Add(DevExpress.Data.SummaryItemType.Sum, "Freight");
+}).BindToCustomData(Model).GetHtml()
