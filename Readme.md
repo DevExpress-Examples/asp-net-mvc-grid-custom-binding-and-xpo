@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [OrdersController.cs](./CS/XPCustomBindingExample/Controllers/OrdersController.cs) (VB: [OrdersController.vb](./VB/XPCustomBindingExample/Controllers/OrdersController.vb))
+* [DatabaseSchemaHelper.cs](./CS/XPCustomBindingExample/XPO/DatabaseSchemaHelper.cs) (VB: [DatabaseSchemaHelper.vb](./VB/XPCustomBindingExample/XPO/DatabaseSchemaHelper.vb))
+* **[XpoBindingHandlers.cs](./CS/XPCustomBindingExample/XPO/XpoBindingHandlers.cs) (VB: [XpoBindingHandlers.vb](./VB/XPCustomBindingExample/XPO/XpoBindingHandlers.vb))**
+* [XpoHelper.cs](./CS/XPCustomBindingExample/XPO/XpoHelper.cs) (VB: [XpoHelper.vb](./VB/XPCustomBindingExample/XPO/XpoHelper.vb))
+<!-- default file list end -->
 # How to bind an ASP.NET MVC GridView extension to a table with an unknown schema using Custom Data Binding and XPO
 
 
