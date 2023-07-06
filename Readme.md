@@ -16,17 +16,17 @@ The approach demonstrated in this example can be used when you need to take adva
 ## Prerequisites
 
 This example is based on the following technologies:
-1. [eXpress Persistent Objects](https://docs.devexpress.com/XPO/1998/express-persistent-objects) (aka XPO) are used as a data access layer. Refer to tutorials in our online documentation to get started with XPO: [Getting Started](https://docs.devexpress.com/XPO/2263/getting-started).
-2. XPO supports dynamic mapping to the database tables without declaring any classes.  Refer to the following article to learn more about this functionality: [How to create persistent metadata on the fly and load data from an arbitrary table](https://supportcenter.devexpress.com/ticket/details/k18482/how-to-create-persistent-metadata-on-the-fly-and-load-data-from-an-arbitrary-table).
-3. Our [GridView](https://docs.devexpress.com/AspNetMvc/8966/components/grid-view) component for ASP.NET MVC platform supports [Custom Data Binding](https://docs.devexpress.com/AspNetMvc/14321/components/grid-view/binding-to-data/custom-data-binding) that allows you to populate a grid with data manually taking into account the current grid state (filtering, sorting, grouping).
-4. The [XPCollection](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPCollection) object can be used to load objects with unknown type at compile time. The [XPView](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPView) object allows you to build complex queries with grouping, filtering, sorting and data aggregation.
+1. [eXpress Persistent Objects](https://docs.devexpress.com/XPO/1998/express-persistent-objects) (XPO) are used as a data access layer. Refer to tutorials in our online documentation to get started with XPO: [Getting Started](https://docs.devexpress.com/XPO/2263/getting-started).
+2. XPO supports dynamic mapping to the database tables without declaring any classes.  Refer to the following article for more information about this functionality: [How to create persistent metadata on the fly and load data from an arbitrary table](https://supportcenter.devexpress.com/ticket/details/k18482/how-to-create-persistent-metadata-on-the-fly-and-load-data-from-an-arbitrary-table).
+3. Our [GridView](https://docs.devexpress.com/AspNetMvc/8966/components/grid-view) component for ASP.NET MVC platform supports [Custom Data Binding](https://docs.devexpress.com/AspNetMvc/14321/components/grid-view/binding-to-data/custom-data-binding) that allows you to populate a grid with data while taking into account the current grid state (filtering, sorting, grouping).
+4. The [XPCollection](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPCollection) object can be used to load objects with unknown type at compile time. The [XPView](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPView) object allows you to build complex queries with grouping, filtering, sorting, and data aggregation.
 
-Refer to our online documentation to understand concepts used in this example.
+Refer to our online documentation for more information about the concepts used in this example.
 
 
 ## Implementation details
 
-1. To change the persistent classes schema at run time, it is necessary to create a separate [Data Access Layer](https://docs.devexpress.com/XPO/2123/connect-to-a-data-store) for each user, instead of sharing a single [ThreadSafeDataLayer](https://docs.devexpress.com/XPO/DevExpress.Xpo.ThreadSafeDataLayer) instance between all users as it recommended to do in regular scenarios.  
+1. To change the persistent classes schema at run time, you need to create a separate [Data Access Layer](https://docs.devexpress.com/XPO/2123/connect-to-a-data-store) for each user instead of sharing a single [ThreadSafeDataLayer](https://docs.devexpress.com/XPO/DevExpress.Xpo.ThreadSafeDataLayer) instance between all users.  
 Refer to the [XpoHelper.cs](./CS/XPCustomBindingExample/XPO/XpoHelper.cs) (VB: [XpoHelper.vb](./VB/XPCustomBindingExample/XPO/XpoHelper.vb)) file for implementation details.
  
 1. To handle the concurrent access to a [data store](https://docs.devexpress.com/CoreLibraries/DevExpress.Xpo.DB.IDataStore), this example uses the `DataStorePool` component. XPO automatically creates `DataStorePool` when the connection string contains the special parameter. The [XpoDefault.GetConnectionPoolString](https://docs.devexpress.com/XPO/devexpress.xpo.xpodefault.getconnectionpoolstring.overloads) method is used to prepare such connection string.
@@ -41,7 +41,7 @@ Refer to the [XpoHelper.cs](./CS/XPCustomBindingExample/XPO/XpoHelper.cs) (VB: [
 
 To add this functionality to an existing ASP.NET MVC project, do the following:
 
-1. Copy the [XpoHelper.cs](./CS/XPCustomBindingExample/XPO/XpoHelper.cs) (VB: [XpoHelper.vb](./VB/XPCustomBindingExample/XPO/XpoHelper.vb)) file to your project. If the project already contains a similar helper class, you can replace it or use both the implementations together.
+1. Copy the [XpoHelper.cs](./CS/XPCustomBindingExample/XPO/XpoHelper.cs) (VB: [XpoHelper.vb](./VB/XPCustomBindingExample/XPO/XpoHelper.vb)) file to your project. If the project already contains a similar helper class, you can replace it or use both implementations together.
 2. Add required connection strings to your **Web.config** file. Refer to the Microsoft documentation to learn more about the `<connectionStrings>` configuration section: 
     * [Creating a Connection String and Working with SQL Server LocalDB](https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/creating-a-connection-string)
     * [SQL Server Connection Strings for ASP.NET Web Applications](https://learn.microsoft.com/en-us/previous-versions/aspnet/jj653752(v=vs.110)?redirectedfrom=MSDN). 
