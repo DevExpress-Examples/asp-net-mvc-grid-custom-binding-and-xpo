@@ -6,11 +6,6 @@
 
 # GridView for ASP.NET MVC - How to use Custom Data Binding and XPO to bind a grid to a table with an unknown schema
 
-This example demonstrates an edge-case scenario and uses XPO in an uncommon way. Refer to the following articles for XPO best practices:
-
-* [DevExpress XPO ORM for .NET Framework / .NET Core / .NET Standard 2.0](https://github.com/DevExpress/XPO/tree/master/Tutorials/ASP.NET/WebForms/CS)
-* [How to bind editors to XPO objects in an ASP.NET MVC application](https://supportcenter.devexpress.com/ticket/details/k18525/how-to-bind-editors-to-xpo-objects-in-an-asp-net-mvc-application)
-
 The approach demonstrated in this example can be used when you need to take advantage of the [partial data loading](https://docs.devexpress.com/AspNetMvc/14760/components/grid-view/binding-to-data/binding-to-large-data-database-server-mode) feature, but cannot use statically declared business models mapped to the database. This approach allows you to add and remove database columns without modifying the application code, to implement a generic View consuming data from an arbitrary table (or even database) selected by the user, or to implement a SaaS application.
 
 ## Prerequisites
@@ -65,6 +60,7 @@ Use the `XpoBindingHandler` class in your Controllers the same way as it is demo
 ## Documentation
 
 * [How to bind editors to XPO objects in an ASP.NET MVC application](https://supportcenter.devexpress.com/ticket/details/k18525/how-to-bind-editors-to-xpo-objects-in-an-asp-net-mvc-application)
+* [DevExpress XPO ORM for .NET Framework / .NET Core / .NET Standard 2.0](https://github.com/DevExpress/XPO/tree/master/Tutorials/ASP.NET/WebForms/CS)
 
 ## More Examples
 
