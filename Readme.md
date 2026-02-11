@@ -67,7 +67,7 @@ Use the `XpoBindingHandler` class in your Controllers the same way as it is demo
 
 * [DevExpress XPO ORM for .NET Framework / .NET Core / .NET Standard 2.0](https://github.com/DevExpress/XPO/tree/master/Tutorials/ASP.NET/WebForms/CS)
 <!-- feedback -->
-## Does This Example Address Your Development Requirements/Objectives?
+## Does this example address your development requirements/objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-mvc-grid-custom-binding-and-xpo&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-mvc-grid-custom-binding-and-xpo&~~~was_helpful=no)
 
